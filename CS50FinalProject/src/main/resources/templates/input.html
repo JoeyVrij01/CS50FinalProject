@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketstack API input</title>
+    <style>
+        html {background-color: navajowhite}
+        h2 {text-align: center;}
+        h5 {text-align: center;}
+        form {text-align: center;}
+        .choice {background-color: whitesmoke}
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Make your selection:</h2>
+    </div>
+    <div>
+        <div>
+            <h5>Popular stocks:</h5>
+        </div>
+        <form action="#" th:action="@{/finance}" method="post" th:object="${user}">
+            <div style="text-align: left; margin-left:445pt;">
+            <input type="checkbox" th:field="*{Google}" id="GOOGL" name="GOOGL" value="GOOGL">
+            <label for="GOOGL"> GOOGL </label><br>
+            <input type="checkbox" th:field="*{Apple}" id="AAPL" name="AAPL" value="AAPL">
+            <label for="AAPL"> AAPL </label><br>
+            <input type="checkbox" th:field="*{Microsoft}" id="MSFT" name="MSFT" value="MSFT">
+            <label for="MSFT"> MSFT </label><br>
+            <input type="checkbox" th:field="*{Tesla}" id="TSLA" name="TSLA" value="TSLA">
+            <label for="TSLA"> TSLA </label><br>
+            <input type="checkbox" th:field="*{Amazon}" id="AMZN" name="AMZN" value="AMZN">
+            <label for="AMZN"> AMZN </label>
+            </div>
+            <br>
+            <div>
+                <h5>Search for other stocks:</h5>
+            </div>
+            <label for="firstchoice">First choice:</label><br>
+            <input type="text" th:field="*{firstChoice}" class="choice" id="firstchoice" name="firstchoice"><br>
+            <label for="secondchoice">Second choice:</label><br>
+            <input type="text" th:field="*{secondChoice}" class="choice" id="secondchoice" name="secondchoice"><br>
+            <label for="thirdchoice">Third choice:</label><br>
+            <input type="text" th:field="*{thirdChoice}" class="choice" id="thirdchoice" name="thirdchoice"><br>
+            <label for="fourthchoice">Fourth choice:</label><br>
+            <input type="text" th:field="*{fourthChoice}" class="choice" id="fourthchoice" name="fourthchoice"><br>
+            <label for="fifthchoice">Fifth choice:</label><br>
+            <input type="text" th:field="*{fifthChoice}" class="choice" id="fifthchoice" name="fifthchoice"><br>
+            <br>
+            <div>
+                <h5>Select the period you want to receive data for:</h5>
+            </div>
+            <label for="date">Starting date (yyyy-mm-dd):</label><br>
+            <input type="text" th:field="*{dateValue}" class="choice" id="date" name="date">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
